@@ -31,6 +31,10 @@ describe("<ToDo/>", () => {
     it("When the add button is pressed, if the input field is empty, prevent item from being added", () => {
       app.find(".ToDo-Add").simulate("click");
       expect(app.find(".ToDoItem").length).toBe(2);
+    });
+
+    it("When the add button is pressed, if the input field is empty, prevent item from being added", () => {
+      app.find(".ToDo-Add").simulate("click");
       expect(window.alert).toHaveBeenCalled();
     });
 
