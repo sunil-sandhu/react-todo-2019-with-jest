@@ -15,7 +15,8 @@ describe("<ToDo/>", () => {
     });
 
     it("Has an input field", () => {
-      expect(app.find("input").length).toEqual(1);
+      expect(app.find("[data-testid='ToDoInput']").length).toEqual(1);
+      // expect(app.find(".ToDoInput").length).toEqual(1);
     });
 
     it("Has an add button", () => {
@@ -27,6 +28,7 @@ describe("<ToDo/>", () => {
     afterAll(() => {
       app.find(".ToDoItem-Delete").simulate("click");
     });
+
     window.alert = jest.fn();
     it("When the add button is pressed, if the input field is empty, prevent item from being added", () => {
       app.find(".ToDo-Add").simulate("click");
@@ -53,7 +55,7 @@ describe("<ToDo/>", () => {
   });
 
   describe("Deleting items", () => {
-    it("When the delete button is pressed for a todo item, it removes the entire item", () => {
+    it("When the delete button is pressed for the first todo item, it removes the entire item", () => {
       app
         .find(".ToDoItem-Delete")
         .first()

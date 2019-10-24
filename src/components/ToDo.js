@@ -49,7 +49,7 @@ const ToDo = () => {
           })}
         </div>
 
-        <div className="ToDoInput">
+        <div data-testid="ToDoInput" className="ToDoInput">
           <input type="text" value={toDo} onChange={handleInput} onKeyPress={handleKeyPress} />
           <button className="ToDo-Add" onClick={createNewToDoItem}>
             +
